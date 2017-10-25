@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WowDungeon", "WowDungeon\WowDungeon.vcxproj", "{816E7B27-450A-453C-A874-A4CDA25FB96C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{816E7B27-450A-453C-A874-A4CDA25FB96C}.Debug|x64.ActiveCfg = Debug|x64
+		{816E7B27-450A-453C-A874-A4CDA25FB96C}.Debug|x64.Build.0 = Debug|x64
+		{816E7B27-450A-453C-A874-A4CDA25FB96C}.Debug|x86.ActiveCfg = Debug|Win32
+		{816E7B27-450A-453C-A874-A4CDA25FB96C}.Debug|x86.Build.0 = Debug|Win32
+		{816E7B27-450A-453C-A874-A4CDA25FB96C}.Release|x64.ActiveCfg = Release|x64
+		{816E7B27-450A-453C-A874-A4CDA25FB96C}.Release|x64.Build.0 = Release|x64
+		{816E7B27-450A-453C-A874-A4CDA25FB96C}.Release|x86.ActiveCfg = Release|Win32
+		{816E7B27-450A-453C-A874-A4CDA25FB96C}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A2701FB5-0BC9-4764-8F80-3C765BDA6852}
+	EndGlobalSection
+EndGlobal
