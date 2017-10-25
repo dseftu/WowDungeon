@@ -1,6 +1,7 @@
 #pragma once
 #include "Game.h"
 #include "Rectangle.h"
+#include "IDungeonRoomState.h"
 
 namespace Library
 {

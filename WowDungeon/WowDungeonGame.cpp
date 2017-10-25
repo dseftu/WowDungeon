@@ -1,5 +1,6 @@
 #include "pch.h"
 #include "WowDungeonGame.h"
+#include "DungeonReader.h"
 
 using namespace std;
 using namespace DirectX;
@@ -23,6 +24,8 @@ namespace WowDungeon
 		mKeyboard = make_shared<KeyboardComponent>(*this);
 		mComponents.push_back(mKeyboard);
 		mServices.AddService(KeyboardComponent::TypeIdClass(), mKeyboard.get());
+
+		std::shared_ptr<WowDungeon::IDungeonRoomState> dungeon = WowDungeon::DungeonReader::LoadDungeonFromFile("SampleDungeon.csv");
 
 		Game::Initialize();
 	}
