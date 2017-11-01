@@ -1,8 +1,7 @@
+/*
 #pragma once
 #include <string>
-#include "IDungeonRoomState.h"
 #include <cstdint>
-#include "Utility.h"
 
 namespace WowDungeon
 {
@@ -12,5 +11,5 @@ namespace WowDungeon
 		static std::shared_ptr<WowDungeon::IDungeonRoomState> LoadDungeonFromFile(const std::string& filename);
 	};
 }
-
+*/
 

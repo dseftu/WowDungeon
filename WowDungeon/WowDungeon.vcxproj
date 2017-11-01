@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\directxtk_desktop_2015.2017.9.22.1\build\native\directxtk_desktop_2015.props" Condition="Exists('..\packages\directxtk_desktop_2015.2017.9.22.1\build\native\directxtk_desktop_2015.props')" />
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -145,17 +144,20 @@ xcopy /E /Y "$(SolutionDir)Content" "$(OutDir)Content"</Command>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Dungeon.h" />
-    <ClInclude Include="DungeonReader.h" />
-    <ClInclude Include="DungeonRoomState.h" />
-    <ClInclude Include="IDungeonRoomState.h" />
+    <ClInclude Include="Action.h" />
+    <ClInclude Include="ActionList.h" />
+    <ClInclude Include="Condition.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="WowDungeonGame.h" />
+    <ClInclude Include="RTTI.h" />
+    <ClInclude Include="State.h" />
+    <ClInclude Include="StateMachine.h" />
+    <ClInclude Include="Transition.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Dungeon.cpp" />
+    <ClCompile Include="Action.cpp" />
+    <ClCompile Include="ActionList.cpp" />
+    <ClCompile Include="Condition.cpp" />
     <ClCompile Include="DungeonReader.cpp" />
-    <ClCompile Include="DungeonRoomState.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">pch.h</PrecompiledHeaderFile>
@@ -163,25 +165,13 @@ xcopy /E /Y "$(SolutionDir)Content" "$(OutDir)Content"</Command>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <ClCompile Include="Program.cpp" />
-    <ClCompile Include="WowDungeonGame.cpp" />
+    <ClCompile Include="State.cpp" />
+    <ClCompile Include="StateMachine.cpp" />
+    <ClCompile Include="Transition.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Content\SampleDungeon.csv" />
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <ImportGroup Label="ExtensionTargets">
-    <Import Project="..\packages\Box2D.2.3.0\build\native\Box2D.targets" Condition="Exists('..\packages\Box2D.2.3.0\build\native\Box2D.targets')" />
-    <Import Project="..\packages\directxtk_desktop_2015.2017.9.22.1\build\native\directxtk_desktop_2015.targets" Condition="Exists('..\packages\directxtk_desktop_2015.2017.9.22.1\build\native\directxtk_desktop_2015.targets')" />
-    <Import Project="..\packages\Bespoke.Games.Framework.1.4.3\build\native\Bespoke.Games.Framework.targets" Condition="Exists('..\packages\Bespoke.Games.Framework.1.4.3\build\native\Bespoke.Games.Framework.targets')" />
-  </ImportGroup>
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Box2D.2.3.0\build\native\Box2D.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Box2D.2.3.0\build\native\Box2D.targets'))" />
-    <Error Condition="!Exists('..\packages\directxtk_desktop_2015.2017.9.22.1\build\native\directxtk_desktop_2015.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\directxtk_desktop_2015.2017.9.22.1\build\native\directxtk_desktop_2015.props'))" />
-    <Error Condition="!Exists('..\packages\directxtk_desktop_2015.2017.9.22.1\build\native\directxtk_desktop_2015.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\directxtk_desktop_2015.2017.9.22.1\build\native\directxtk_desktop_2015.targets'))" />
-    <Error Condition="!Exists('..\packages\Bespoke.Games.Framework.1.4.3\build\native\Bespoke.Games.Framework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Bespoke.Games.Framework.1.4.3\build\native\Bespoke.Games.Framework.targets'))" />
-  </Target>
+  <ImportGroup Label="ExtensionTargets" />
 </Project>
