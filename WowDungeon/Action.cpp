@@ -3,13 +3,5 @@
 
 namespace WowDungeon
 {
-	Action::Action()
-	{
-	}
-
-
-	void Action::operator()()
-	{
-	}
 	
 }

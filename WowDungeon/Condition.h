@@ -1,18 +1,18 @@
 #pragma once
-#include "RTTI.h"
+
 namespace WowDungeon
 {
 	using namespace std;
 
-	class Condition : public RTTI
+	class Condition
 	{
-		RTTI_DECLARATIONS(Condition, RTTI)
 
 	public:
-		Condition();
-		~Condition();
-		bool operator()();
-		Condition& operator=(Condition& condition);
+		virtual bool Evaluate() = 0;
+
+	private:
+		bool mValue;
+
 	};
 }
 
