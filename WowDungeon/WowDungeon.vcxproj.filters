@@ -33,13 +33,13 @@
     <ClInclude Include="Condition.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RTTI.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="EqualityCondition.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="StringEqualityCondition.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DisplayTextAction.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -53,22 +53,19 @@
     <ClCompile Include="DungeonReader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="State.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Action.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Transition.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="StateMachine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Condition.cpp">
+    <ClCompile Include="StringEqualityCondition.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="StringEqualityCondition.cpp">
+    <ClCompile Include="DisplayTextAction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="State.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,17 +1,18 @@
 #pragma once
-#include "RTTI.h"
 
 namespace WowDungeon
 {
 	using namespace std;
 
-	class Action : public RTTI
+	class Action
 	{
-		RTTI_DECLARATIONS(Action, RTTI)
 
 	public:
-		
+		Action() = default;
+		virtual void Do() = 0;
+
 	protected:
+		string mName;
 		
 	};
 }
