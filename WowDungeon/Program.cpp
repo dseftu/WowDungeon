@@ -12,7 +12,7 @@ int main()
 	shared_ptr<string> command = make_unique<string>();
 	shared_ptr<Blackboard> blackboard = make_shared<Blackboard>(command);
 
-	shared_ptr<EnvironmentStateMachine> environment = make_shared<EnvironmentStateMachine>(command);
+	shared_ptr<EnvironmentStateMachine> environment = make_shared<EnvironmentStateMachine>(blackboard);
 	shared_ptr<MonsterStateMachine> monster = make_shared<MonsterStateMachine>(blackboard, environment);
 
 	

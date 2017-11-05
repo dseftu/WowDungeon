@@ -21,7 +21,7 @@ namespace WowDungeon
 
 		srand((unsigned int)time(0));
 
-		while (mMonsterCurrentRoom == "Room1")
+		while (mMonsterCurrentRoom == "Room1" && mMonsterCurrentRoom != "LastRoom")
 		{
 			auto nextRand = rand();
 			auto numRooms = rooms.size();

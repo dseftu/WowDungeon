@@ -6,7 +6,9 @@
 #include "Transition.h"
 #include "StringEqualityCondition.h"
 #include "DisplayTextAction.h"
-
+#include "Blackboard.h"
+#include "ActionList.h"
+#include "EndGameAction.h"
 
 namespace WowDungeon
 {
@@ -17,13 +19,13 @@ namespace WowDungeon
 	{
 	public:
 		EnvironmentStateMachine() = delete;
-		EnvironmentStateMachine(shared_ptr<string> command);
+		EnvironmentStateMachine(shared_ptr<Blackboard> blackboard);
 		virtual void Initialize() override;
 		
 		const string GetPlayerCurrentRoom();
 		void SetCommandString(shared_ptr<string> command) { mCommand = command; };
-
 	private:
+		shared_ptr<Blackboard> mBlackboard;
 		shared_ptr<string> mCommand;
 	};
 

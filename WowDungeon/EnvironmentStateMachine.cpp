@@ -5,9 +5,10 @@
 
 namespace WowDungeon
 {
-	EnvironmentStateMachine::EnvironmentStateMachine(shared_ptr<string> command)
+	EnvironmentStateMachine::EnvironmentStateMachine(shared_ptr<Blackboard> blackboard)
 	{
-		SetCommandString(command);
+		mBlackboard = blackboard;
+		SetCommandString(mBlackboard->GetCommandString());
 		Initialize();
 	}
 	void EnvironmentStateMachine::Initialize()
@@ -22,16 +23,22 @@ namespace WowDungeon
 		shared_ptr<Condition> ConditionGoWest = make_shared<StringEqualityCondition>(make_shared<string>("west"), mCommand);
 
 		// create some enter and exit transitions
-		auto enterRoom1 = make_shared<DisplayTextAction>("You enter room 1.  You see a door to the north and the south.");
-		auto enterRoom2 = make_shared<DisplayTextAction>("You enter room 2.  You see a door to the west, east, and the south.");
-		auto enterRoom3 = make_shared<DisplayTextAction>("You enter room 3.  You see a door to the west.");
-		auto enterRoom4 = make_shared<DisplayTextAction>("You enter room 4.  You see a door to the east and the south.");
-		auto enterRoom5 = make_shared<DisplayTextAction>("You enter room 5.  You see a door to the north and the south");
-		auto enterRoom6 = make_shared<DisplayTextAction>("You enter room 6.  You see a door to the north and to the east.");
-		auto enterRoom7 = make_shared<DisplayTextAction>("You enter room 7.  You see a door to the west, north, and east.");
-		auto enterRoom8 = make_shared<DisplayTextAction>("You enter room 8.  You see a door to the west and the south.");
-		auto enterRoom9 = make_shared<DisplayTextAction>("You enter room 9.  You see a door to the north.");
-		auto exitRoom = make_shared<DisplayTextAction>("You boldy enter the next room.");
+		auto enterRoom1 = make_shared<DisplayTextAction>("You awaken from your nap.  You hear something off in the distance.\nYou see a door to the north and the south. \n\n(Type the direction you wish to travel.)");
+		auto enterRoom2 = make_shared<DisplayTextAction>("You enter room 2.\nYou see a door to the west, east, and the south.");
+		auto enterRoom3 = make_shared<DisplayTextAction>("You enter room 3.\nYou see a door to the west.");
+		auto enterRoom4 = make_shared<DisplayTextAction>("You enter room 4.\nYou see a door to the east and the south.");
+		auto enterRoom5 = make_shared<DisplayTextAction>("You enter room 5.\nYou see a door to the north and the south");
+		auto enterRoom6 = make_shared<DisplayTextAction>("You enter room 6.\nYou see a door to the north and to the east.");
+		auto enterRoom7 = make_shared<DisplayTextAction>("You enter room 7.\nYou see a door to the west, north, and east.");
+		auto enterRoom8 = make_shared<DisplayTextAction>("You enter room 8.\nYou see a door to the west and the south.");
+		auto enterRoom9 = make_shared<DisplayTextAction>("You enter room 9.\nYou see a door to the north and the dungeon exit to the south.");
+		auto exitRoom = make_shared<DisplayTextAction>("You leave the room.");
+		auto emptyText = make_shared<DisplayTextAction>("");
+		auto leaveDungeon = make_shared<DisplayTextAction>("You have successfully escaped the dungeon!");
+		auto endGame = make_shared<EndGameAction>(mBlackboard);
+		auto endGameActions = make_shared<ActionList>();
+		endGameActions->AddAction(leaveDungeon);
+		endGameActions->AddAction(endGame);
 
 		// create some states
 		shared_ptr<State> room1 = make_shared<State>("Room1", enterRoom1, exitRoom);
@@ -43,6 +50,8 @@ namespace WowDungeon
 		shared_ptr<State> room7 = make_shared<State>("Room7", enterRoom7, exitRoom);
 		shared_ptr<State> room8 = make_shared<State>("Room8", enterRoom8, exitRoom);
 		shared_ptr<State> room9 = make_shared<State>("Room9", enterRoom9, exitRoom);
+		shared_ptr<State> lastRoom = make_shared<State>("LastRoom", endGameActions, emptyText);
+		
 
 
 		// add transitions
@@ -90,7 +99,9 @@ namespace WowDungeon
 		room8->AddTransition(room8to9);
 
 		auto room9to8 = make_shared<Transition>(ConditionGoNorth, room8);
+		auto room9toExit = make_shared<Transition>(ConditionGoSouth, lastRoom);
 		room9->AddTransition(room9to8);
+		room9->AddTransition(room9toExit);
 
 		AddState(room1);
 		AddState(room2);
