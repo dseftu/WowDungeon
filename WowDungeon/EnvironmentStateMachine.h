@@ -16,10 +16,11 @@ namespace WowDungeon
 		public StateMachine
 	{
 	public:
-
+		EnvironmentStateMachine() = delete;
+		EnvironmentStateMachine(shared_ptr<string> command);
 		virtual void Initialize() override;
-		void Initialize(shared_ptr<string> command);
-
+		
+		const string GetPlayerCurrentRoom();
 		void SetCommandString(shared_ptr<string> command) { mCommand = command; };
 
 	private:

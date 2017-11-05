@@ -5,7 +5,11 @@
 
 namespace WowDungeon
 {
-	
+	EnvironmentStateMachine::EnvironmentStateMachine(shared_ptr<string> command)
+	{
+		SetCommandString(command);
+		Initialize();
+	}
 	void EnvironmentStateMachine::Initialize()
 	{
 		// command must be set
@@ -88,12 +92,23 @@ namespace WowDungeon
 		auto room9to8 = make_shared<Transition>(ConditionGoNorth, room8);
 		room9->AddTransition(room9to8);
 
+		AddState(room1);
+		AddState(room2);
+		AddState(room3);
+		AddState(room4);
+		AddState(room5);
+		AddState(room6);
+		AddState(room7);
+		AddState(room8);
+		AddState(room9);
+
 		SetCurrentState(room1);
 		room1->Enter();
 	}
-	void EnvironmentStateMachine::Initialize(shared_ptr<string> command)
+
+	const string EnvironmentStateMachine::GetPlayerCurrentRoom()
 	{
-		SetCommandString(command);
-		Initialize();
+		return CurrentState()->Name();
 	}
+	
 }

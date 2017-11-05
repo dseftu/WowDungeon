@@ -23,10 +23,13 @@ namespace WowDungeon
 		void SetCommandString(shared_ptr<string> command) { mCommand = command; };
 		shared_ptr<string> GetCommandString() { return mCommand; };
 
+		bool Continue() { return mContinue; };
+		void EndGame() { mContinue = false; };
 	private:
 		string mPlayerCurrentRoom;
 		Direction mPlayerLastDirection;
 		shared_ptr<string> mCommand;
+		bool mContinue = true;
 	};
 }
 
