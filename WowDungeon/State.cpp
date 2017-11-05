@@ -15,12 +15,7 @@ namespace WowDungeon
 	{
 		for (auto& transition : mTransitions)
 		{
-			if (transition->IsTriggered())
-			{
-				Exit();
-				transition->Target()->Enter();
-				return transition->Target();			
-			}
+			if (transition->IsTriggered()) return transition->Target();
 		}
 		return nullptr;
 	}

@@ -145,18 +145,22 @@ xcopy /E /Y "$(SolutionDir)Content" "$(OutDir)Content"</Command>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Action.h" />
+    <ClInclude Include="Blackboard.h" />
     <ClInclude Include="Condition.h" />
+    <ClInclude Include="EnvironmentStateMachine.h" />
     <ClInclude Include="EqualityCondition.h" />
     <ClInclude Include="DisplayTextAction.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="StandardConditionDirections.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="StateMachine.h" />
     <ClInclude Include="StringEqualityCondition.h" />
     <ClInclude Include="Transition.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Blackboard.cpp" />
     <ClCompile Include="DisplayTextAction.cpp" />
-    <ClCompile Include="DungeonReader.cpp" />
+    <ClCompile Include="EnvironmentStateMachine.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">pch.h</PrecompiledHeaderFile>
