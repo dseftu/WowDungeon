@@ -23,16 +23,16 @@ namespace WowDungeon
 		shared_ptr<Condition> ConditionGoWest = make_shared<StringEqualityCondition>(make_shared<string>("west"), mCommand);
 
 		// create some enter and exit transitions
-		auto enterRoom1 = make_shared<DisplayTextAction>("You awaken from your nap.  You hear something off in the distance.\nYou see a door to the north and the south. \n\n(Type the direction you wish to travel.)");
-		auto enterRoom2 = make_shared<DisplayTextAction>("You enter room 2.\nYou see a door to the west, east, and the south.");
-		auto enterRoom3 = make_shared<DisplayTextAction>("You enter room 3.\nYou see a door to the west.");
-		auto enterRoom4 = make_shared<DisplayTextAction>("You enter room 4.\nYou see a door to the east and the south.");
-		auto enterRoom5 = make_shared<DisplayTextAction>("You enter room 5.\nYou see a door to the north and the south");
-		auto enterRoom6 = make_shared<DisplayTextAction>("You enter room 6.\nYou see a door to the north and to the east.");
-		auto enterRoom7 = make_shared<DisplayTextAction>("You enter room 7.\nYou see a door to the west, north, and east.");
-		auto enterRoom8 = make_shared<DisplayTextAction>("You enter room 8.\nYou see a door to the west and the south.");
-		auto enterRoom9 = make_shared<DisplayTextAction>("You enter room 9.\nYou see a door to the north and the dungeon exit to the south.");
-		auto exitRoom = make_shared<DisplayTextAction>("You leave the room.");
+		auto enterRoom1 = make_shared<DisplayTextAction>("The room you are standing in is barren.\nYou see a door to the north and the south. \n\n(Type the direction you wish to travel.)");
+		auto enterRoom2 = make_shared<DisplayTextAction>("You stumble into the next room.  There are torches on the walls illuminating the room.\nYou see a door to the west, east, and the south.");
+		auto enterRoom3 = make_shared<DisplayTextAction>("You enter the room and realize this was a dead end.  On the bright side, there is a small window in here.  It looks nice outside, exactly where you aren't.  Oh well.\nYou see a door to the west.");
+		auto enterRoom4 = make_shared<DisplayTextAction>("Entering the room, you notice an elaborate tapastry adorning the west wall.  It seems to be depicting a great battle, presumably one that the previous owner participated in.\nYou see a door to the east and the south.");
+		auto enterRoom5 = make_shared<DisplayTextAction>("You notice a large chandeler in the middle of this hallway.  It is adorned with several very large rubys.\nYou see a door to the north and the south");
+		auto enterRoom6 = make_shared<DisplayTextAction>("The corner of this room has a small, damaged chair.  You don't dare sit on it.\nYou see a door to the north and to the east.");
+		auto enterRoom7 = make_shared<DisplayTextAction>("You enter a room with three doors.\nYou see a door to the west, north, and east.");
+		auto enterRoom8 = make_shared<DisplayTextAction>("This room is brighter than the rest.  You think you might be close to an exit.\nYou see a door to the west and the south.");
+		auto enterRoom9 = make_shared<DisplayTextAction>("At last you see the exit!\nYou see a door to the north and the dungeon exit to the south.");
+		auto exitRoom = make_shared<DisplayTextAction>("\nYou leave the room.\n");
 		auto emptyText = make_shared<DisplayTextAction>("");
 		auto leaveDungeon = make_shared<DisplayTextAction>("You have successfully escaped the dungeon!");
 		auto endGame = make_shared<EndGameAction>(mBlackboard);

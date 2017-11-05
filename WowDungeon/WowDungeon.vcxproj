@@ -152,6 +152,7 @@ xcopy /E /Y "$(SolutionDir)Content" "$(OutDir)Content"</Command>
     <ClInclude Include="EnvironmentStateMachine.h" />
     <ClInclude Include="EqualityCondition.h" />
     <ClInclude Include="DisplayTextAction.h" />
+    <ClInclude Include="MonsterChaseAction.h" />
     <ClInclude Include="MonsterStateMachine.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="SameRoomAsPlayerCondition.h" />
@@ -167,6 +168,7 @@ xcopy /E /Y "$(SolutionDir)Content" "$(OutDir)Content"</Command>
     <ClCompile Include="DisplayTextAction.cpp" />
     <ClCompile Include="EndGameAction.cpp" />
     <ClCompile Include="EnvironmentStateMachine.cpp" />
+    <ClCompile Include="MonsterChaseAction.cpp" />
     <ClCompile Include="MonsterStateMachine.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
