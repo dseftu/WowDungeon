@@ -9,12 +9,11 @@ namespace WowDungeon
 	{
 	public:
 
-		// Inherited via Action
 		virtual void Do() override;
 
 		void AddAction(shared_ptr<Action> action);
 
-	private:
+	protected:
 		vector<shared_ptr<Action>> mActions;
 	};
 

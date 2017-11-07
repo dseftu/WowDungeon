@@ -15,6 +15,9 @@
 #include <ctime>
 #include "EndGameAction.h"
 #include "ActionList.h"
+#include "NotCondition.h"
+#include "MonsterChaseAction.h"
+
 namespace WowDungeon
 {
 	class MonsterStateMachine :
@@ -25,6 +28,7 @@ namespace WowDungeon
 		MonsterStateMachine(shared_ptr<Blackboard> blackboard, shared_ptr<EnvironmentStateMachine> environment);
 		virtual void Initialize() override;
 		const string GetMonsterCurrentRoom() { return mMonsterCurrentRoom; };
+		void SetMonsterCurrentRoom(string room) { mMonsterCurrentRoom = room; };
 
 	private:
 		shared_ptr<Blackboard> mBlackboard;

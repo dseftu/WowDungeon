@@ -154,7 +154,9 @@ xcopy /E /Y "$(SolutionDir)Content" "$(OutDir)Content"</Command>
     <ClInclude Include="DisplayTextAction.h" />
     <ClInclude Include="MonsterChaseAction.h" />
     <ClInclude Include="MonsterStateMachine.h" />
+    <ClInclude Include="NotCondition.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="RandomAction.h" />
     <ClInclude Include="SameRoomAsPlayerCondition.h" />
     <ClInclude Include="StandardConditionDirections.h" />
     <ClInclude Include="State.h" />
@@ -177,6 +179,7 @@ xcopy /E /Y "$(SolutionDir)Content" "$(OutDir)Content"</Command>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <ClCompile Include="Program.cpp" />
+    <ClCompile Include="RandomAction.cpp" />
     <ClCompile Include="SameRoomAsPlayerCondition.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="StateMachine.cpp" />

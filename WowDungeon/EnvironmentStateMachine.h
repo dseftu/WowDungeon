@@ -9,7 +9,7 @@
 #include "Blackboard.h"
 #include "ActionList.h"
 #include "EndGameAction.h"
-
+#include "RandomAction.h"
 namespace WowDungeon
 {
 	using namespace std;
