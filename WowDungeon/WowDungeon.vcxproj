@@ -187,7 +187,6 @@ xcopy /E /Y "$(SolutionDir)Content" "$(OutDir)Content"</Command>
     <ClCompile Include="Transition.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\Content\SampleDungeon.csv" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -121,9 +121,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\Content\SampleDungeon.csv">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="packages.config" />
   </ItemGroup>
 </Project>
